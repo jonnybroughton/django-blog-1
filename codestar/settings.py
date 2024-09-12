@@ -57,10 +57,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'codestar.urls'
 
+
+# -----------TEMPLATES DIRECTORY-------------
+
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +78,13 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
+# -----------TEMPLATES DIRECTORY-------------
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
 
 WSGI_APPLICATION = 'codestar.wsgi.application'
 
